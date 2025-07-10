@@ -1,11 +1,5 @@
 {
   "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/.next",
-  "installCommand": "cd app && npm install",
-  "framework": "nextjs",
-  "functions": {
-    "app/app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "installCommand": "cd app && npm install"
 }
