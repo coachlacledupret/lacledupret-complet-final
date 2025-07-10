@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #005f9e;
+    --accent: #2e8b57;
+    --background: #fdfdfd;
+    --muted: #f8f9fa;
+    --text: #343a40;
+    --text-muted: #6e7b8b;
+  }
+}
+
+@layer components {
+  .container-max {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#2e8b57] to-[#005f9e] text-white px-8 py-4 rounded-lg font-semibold hover:from-[#267a4d] hover:to-[#004a80] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center;
+  }
+
+  /* Effet de highlight pour le formulaire de capture d'emails */
+  .highlight-form {
+    animation: highlightPulse 2s ease-in-out;
+    border: 3px solid #2e8b57 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 20px rgba(46, 139, 87, 0.3) !important;
+  }
+
+  @keyframes highlightPulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(46, 139, 87, 0.3);
+    }
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(46, 139, 87, 0.5);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(46, 139, 87, 0.3);
+    }
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-[#005f9e] px-8 py-4 rounded-lg font-semibold border-2 border-[#005f9e] hover:bg-[#005f9e] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 hover:-translate-y-2;
+  }
+  
+  .animate-in {
+    @apply opacity-0 translate-y-8;
+    animation: slide-in 0.6s ease-out forwards;
+  }
+}
+
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes count-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.count-animation {
+  animation: count-up 2s ease-out;
+}
